@@ -1,0 +1,18 @@
+<!-- add_event.html in your app's templates folder -->
+{% extends 'event2.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Event</title>
+</head>
+<body>
+    <h2>Add Event</h2>
+    <form method="post" action="{% url 'add_event' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Event</button>
+    </form>
+</body>
+</html>
+{% endblock %}

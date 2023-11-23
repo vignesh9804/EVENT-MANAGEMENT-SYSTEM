@@ -1,0 +1,22 @@
+<!-- delete_event_by_sno.html in your app's templates folder -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Event by S.No</title>
+</head>
+<body>
+    <h2>Delete Event by S.No</h2>
+    <form id="deleteForm" method="get" action="/delete_event/">
+        <label for="s_no">Enter S.No to delete:</label>
+        <input type="text" id="s_no" name="s_no" required>
+        <button type="submit" onclick="updateAction()">Delete Event</button>
+    </form>
+
+    <script>
+        function updateAction() {
+            var s_no = document.getElementById('s_no').value;
+            document.getElementById('deleteForm').action = '/delete_event/' + s_no;
+        }
+    </script>
+</body>
+</html>

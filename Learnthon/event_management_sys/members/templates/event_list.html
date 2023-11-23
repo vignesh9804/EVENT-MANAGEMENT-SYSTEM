@@ -1,0 +1,33 @@
+{% extends 'event2.html' %}
+<!-- event_list.html in your app's templates folder -->
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h2>Event List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Venue Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.s_no }}</td>
+                    <td>{{ event.event_name }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.venue_address }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

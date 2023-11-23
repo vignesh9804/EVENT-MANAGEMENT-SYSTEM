@@ -1,0 +1,37 @@
+<!-- event_list.html in your app's templates folder -->
+{% extends 'event2.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+</head>
+<body>
+    <h2>Event List</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Venue Address</th>
+                <th>Action</th>  <!-- New column for delete action -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.s_no }}</td>
+                    <td>{{ event.event_name }}</td>
+                    <td>{{ event.date }}</td>
+                    <td>{{ event.venue_address }}</td>
+                    <td>
+                        <a href="{% url 'delete_event' event.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}
